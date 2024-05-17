@@ -14,12 +14,12 @@ function makeMove(index) {
 function render() {
     for (let i = 0; i < fields.length; i++) {
         const field = document.getElementById(`field${i}`);
-        if (fields[i]) {
-            let image = fields[i] === 'X' ? 'xmark' : 'circle'; // Hier wird das entsprechende Bild gesetzt, basierend auf currentPlayer
-            field.innerHTML = `<img src="img/${image}.svg" alt="${fields[i]}">`;
+        if (fields[i] === "X") {
+            field.innerHTML = '<img src="img/xmark.svg" alt="X">';
+        } else if (fields[i] === "O") {
+            field.innerHTML = '<img src="img/circle.svg" alt="O">';
         } else {
-            field.innerHTML = '';
-            field.onclick = () => makeMove(i); // Erlaubt Klicks nur auf leeren Feldern
+            field.innerHTML = ''; // Das Feld bleibt leer, `onclick` wird nicht mehr hier zugewiesen
         }
     }
 }
