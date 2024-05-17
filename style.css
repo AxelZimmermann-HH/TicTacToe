@@ -1,0 +1,51 @@
+.game-board {
+    display: grid;
+    grid-template-columns: repeat(3, 100px); /* Drei Spalten */
+    grid-template-rows: repeat(3, 100px); /* Drei Zeilen */
+    gap: 5px; /* Abstand zwischen den Feldern */
+    margin: 20px auto; /* Zentriert das Spielfeld horizontal */
+    width: max-content;
+}
+
+.field {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f0f0f0;
+    border: 1px solid #ddd;
+    font-size: 24px;
+    cursor: pointer;
+    user-select: none; /* Verhindert das Markieren von Text beim Klicken */
+}
+
+.field:hover {
+    background-color: #e4e4e4; /* Farbänderung beim Überfahren mit der Maus */
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.choice-button {
+    border: none;
+    background-color: #f0f0f0; /* Identisch zu den Feldern */
+    cursor: pointer;
+    border-radius: 50%; /* Macht die Buttons rund */
+    width: 60px; /* Festgelegte Breite für runde Form */
+    height: 60px; /* Festgelegte Höhe für runde Form */
+    display: flex;
+    align-items: center; /* Zentriert das Bild vertikal */
+    justify-content: center; /* Zentriert das Bild horizontal */
+}
+
+.choice-button:hover, .choice-button.active {
+    background-color: #e4e4e4; /* Hover Effekt wie bei den Feldern */
+}
+
+.button-container img {
+    width: 50px; /* Breite des Bildes */
+    height: 50px; /* Höhe des Bildes */
+}

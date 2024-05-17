@@ -4,10 +4,35 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>tICtACtOE</title>
-    <script src="script.js"></script>
+    
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body onload="render()">
     
+    <div class="game-board">
+        <div class="game-board">
+            <div class="field" id="field0" onclick="playerOne(0)"></div>
+        <div class="field" id="field1" onclick="playerOne(1)"></div>
+        <div class="field" id="field2" onclick="playerOne(2)"></div>
+        <div class="field" id="field3" onclick="playerOne(3)"></div>
+        <div class="field" id="field4" onclick="playerOne(4)"></div>
+        <div class="field" id="field5" onclick="playerOne(5)"></div>
+        <div class="field" id="field6" onclick="playerOne(6)"></div>
+        <div class="field" id="field7" onclick="playerOne(7)"></div>
+        <div class="field" id="field8" onclick="playerOne(8)"></div>
+        </div>
+    </div>
+
+    <div class="button-container">
+        <button id="chooseX" class="choice-button active">
+            <img src="./img/xmark.svg" alt="X">
+        </button>
+        <button id="chooseO" class="choice-button">
+            <img src="img/circle.svg" alt="O">
+        </button>
+    </div>
+
+
+    <script src="script2.js"></script>
 </body>
 </html>
