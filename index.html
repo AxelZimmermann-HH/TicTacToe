@@ -9,6 +9,10 @@
 </head>
 <body onload="render()">
     
+    <div class="navbar">
+        <img src="./img/logo.png" alt="Logo">
+    </div>
+
     <div class="game-board">
         <div class="game-board">
             <div class="field" id="field0" onclick="makeMove(0)"></div>
@@ -23,7 +27,10 @@
         </div>
     </div>
 
+    <button id="playAgain" onclick="restartGame()" class="playAgain d-none">Play again!</button>
+
     <div class="button-container">
+        <h1>Current Player:</h1>
         <button id="chooseX" class="choice-button active">
             <img src="./img/xmark.svg" alt="X">
         </button>
@@ -32,7 +39,7 @@
         </button>
     </div>
 
-    <button id="playAgain" onclick="restartGame()" class="playAgain d-none">Nochmal spielen!</button>
+    
 
     <script src="script.js"></script>
 </body>

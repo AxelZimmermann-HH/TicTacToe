@@ -13,7 +13,7 @@ const winningCombinations = [
     [2, 4, 6]
 ];
 
-// Array aktualisieren
+
 function render() {
     for (let i = 0; i < fields.length; i++) {
         const field = document.getElementById(`field${i}`);
@@ -26,6 +26,7 @@ function render() {
         }
     }
 }
+
 
 function makeMove(index) {
     if (!fields[index] && gameActive) { // Bedingungen: Feld ist leer und Spiel aktiv
@@ -92,30 +93,27 @@ function showRestartButton() {
 }
 
 
-
 function restartGame() {
     fields.fill(null); // Füllt das gesamte Array mit null, um das Spielfeld zurückzusetzen
     gameActive = true;
     currentPlayer = 'X'; // Stellt sicher, dass Spieler X immer beginnt
 
-    document.querySelectorAll('.field').forEach(field => {
-        field.classList.remove('winner'); // Entfernt die 'winner' Klasse von allen Feldern
-        field.innerHTML = ''; // Leert den Inhalt aller Felder
-        field.onclick = () => makeMove(parseInt(field.id.substring(5))); // Setzt die onClick-Handler zurück
-    });
-
-    // Entfernt den "Nochmal spielen" Button
-    document.getElementById('playAgain').classList.add('d-none');
-    document.querySelectorAll('.field').forEach(element => {
-        element.classList.remove('loser');
-    });
-
-    // Setzt die Active-Klassen korrekt zurück
-    document.getElementById('chooseX').classList.add('active');
+    clearFields();
+    
+    document.getElementById('playAgain').classList.add('d-none'); // Entfernt den "Nochmal spielen" Button
+    
+    document.getElementById('chooseX').classList.add('active'); // Setzt die Active-Klassen korrekt zurück
     document.getElementById('chooseO').classList.remove('active');
 
     render(); // Zeichnet das Spielfeld neu
 }
 
 
-render();
+function clearFields () {
+    document.querySelectorAll('.field').forEach(field => { //hier wird die Variable field definiert für alle HTML-Elemente mit class field
+        field.classList.remove('winner'); // Entfernt die 'winner' Klasse von allen Feldern
+        field.classList.remove('loser');
+        field.innerHTML = ''; // Leert den Inhalt aller Felder
+        field.onclick = () => makeMove(parseInt(field.id.substring(5))); // Setzt die onClick-Handler zurück
+    });
+}
