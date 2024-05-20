@@ -55,6 +55,12 @@ h1 {
     margin-top: 20px;
 }
 
+.buttons {
+    display: flex;
+    gap: 20px;
+    padding-left: 20px;
+}
+
 .choice-button {
     border: none;
     background-color: #f0f0f0; /* Identisch zu den Feldern */
@@ -106,4 +112,16 @@ h1 {
 
 .d-none {
     display: none;
+}
+
+@media (max-width: 550px) {
+    .navbar img {
+        height: 50px;
+    }
+    .button-container {
+        flex-direction: column;
+    }
+    .buttons {
+        padding-left: 0;
+    }
 }
